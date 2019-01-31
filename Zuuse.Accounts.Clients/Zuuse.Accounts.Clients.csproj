@@ -10,7 +10,7 @@
     <Description>A .NET Standard client API for the Zuuse Accounts API, generated using Autorest.</Description>
     <Copyright />
     <PackageProjectUrl></PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Zuuse/lifecycle-api-client</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Zuuse/accounts-api-client</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
