@@ -11,7 +11,7 @@ namespace Zuuse.Accounts.Client
 
     /// <summary>
     /// </summary>
-    public partial interface IZuuseAccountsAPI : System.IDisposable
+    public partial interface IZuuseAccountsApi : System.IDisposable
     {
         /// <summary>
         /// The base URI of the service.

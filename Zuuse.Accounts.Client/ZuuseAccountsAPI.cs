@@ -15,7 +15,7 @@ namespace Zuuse.Accounts.Client
     using System.Net;
     using System.Net.Http;
 
-    public partial class ZuuseAccountsAPI : ServiceClient<ZuuseAccountsAPI>, IZuuseAccountsAPI
+    public partial class ZuuseAccountsApi : ServiceClient<ZuuseAccountsApi>, IZuuseAccountsApi
     {
         /// <summary>
         /// The base URI of the service.
@@ -63,31 +63,31 @@ namespace Zuuse.Accounts.Client
         public virtual IZuuse Zuuse { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the ZuuseAccountsAPI class.
+        /// Initializes a new instance of the ZuuseAccountsApi class.
         /// </summary>
         /// <param name='httpClient'>
         /// HttpClient to be used
         /// </param>
         /// <param name='disposeHttpClient'>
-        /// True: will dispose the provided httpClient on calling ZuuseAccountsAPI.Dispose(). False: will not dispose provided httpClient</param>
-        public ZuuseAccountsAPI(HttpClient httpClient, bool disposeHttpClient) : base(httpClient, disposeHttpClient)
+        /// True: will dispose the provided httpClient on calling ZuuseAccountsApi.Dispose(). False: will not dispose provided httpClient</param>
+        public ZuuseAccountsApi(HttpClient httpClient, bool disposeHttpClient) : base(httpClient, disposeHttpClient)
         {
             Initialize();
         }
 
         /// <summary>
-        /// Initializes a new instance of the ZuuseAccountsAPI class.
+        /// Initializes a new instance of the ZuuseAccountsApi class.
         /// </summary>
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        public ZuuseAccountsAPI(params DelegatingHandler[] handlers) : base(handlers)
+        public ZuuseAccountsApi(params DelegatingHandler[] handlers) : base(handlers)
         {
             Initialize();
         }
 
         /// <summary>
-        /// Initializes a new instance of the ZuuseAccountsAPI class.
+        /// Initializes a new instance of the ZuuseAccountsApi class.
         /// </summary>
         /// <param name='rootHandler'>
         /// Optional. The http client handler used to handle http transport.
@@ -95,13 +95,13 @@ namespace Zuuse.Accounts.Client
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        public ZuuseAccountsAPI(HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : base(rootHandler, handlers)
+        public ZuuseAccountsApi(HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : base(rootHandler, handlers)
         {
             Initialize();
         }
 
         /// <summary>
-        /// Initializes a new instance of the ZuuseAccountsAPI class.
+        /// Initializes a new instance of the ZuuseAccountsApi class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -112,7 +112,7 @@ namespace Zuuse.Accounts.Client
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public ZuuseAccountsAPI(System.Uri baseUri, params DelegatingHandler[] handlers) : this(handlers)
+        public ZuuseAccountsApi(System.Uri baseUri, params DelegatingHandler[] handlers) : this(handlers)
         {
             if (baseUri == null)
             {
@@ -122,7 +122,7 @@ namespace Zuuse.Accounts.Client
         }
 
         /// <summary>
-        /// Initializes a new instance of the ZuuseAccountsAPI class.
+        /// Initializes a new instance of the ZuuseAccountsApi class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -136,7 +136,7 @@ namespace Zuuse.Accounts.Client
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public ZuuseAccountsAPI(System.Uri baseUri, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
+        public ZuuseAccountsApi(System.Uri baseUri, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
         {
             if (baseUri == null)
             {
@@ -160,7 +160,7 @@ namespace Zuuse.Accounts.Client
             EmailTemplates = new EmailTemplates(this);
             ExternalAccount = new ExternalAccount(this);
             Zuuse = new Zuuse(this);
-            BaseUri = new System.Uri("https://zuuseaccountsapidev.azurewebsites.net");
+            BaseUri = new System.Uri("https://accounts.zuuse.com");
             SerializationSettings = new JsonSerializerSettings
             {
                 Formatting = Newtonsoft.Json.Formatting.Indented,

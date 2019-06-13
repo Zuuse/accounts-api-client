@@ -21,7 +21,7 @@ namespace Zuuse.Accounts.Client
     /// <summary>
     /// ExternalAccount operations.
     /// </summary>
-    public partial class ExternalAccount : IServiceOperations<ZuuseAccountsAPI>, IExternalAccount
+    public partial class ExternalAccount : IServiceOperations<ZuuseAccountsApi>, IExternalAccount
     {
         /// <summary>
         /// Initializes a new instance of the ExternalAccount class.
@@ -32,7 +32,7 @@ namespace Zuuse.Accounts.Client
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public ExternalAccount(ZuuseAccountsAPI client)
+        public ExternalAccount(ZuuseAccountsApi client)
         {
             if (client == null)
             {
@@ -42,9 +42,9 @@ namespace Zuuse.Accounts.Client
         }
 
         /// <summary>
-        /// Gets a reference to the ZuuseAccountsAPI
+        /// Gets a reference to the ZuuseAccountsApi
         /// </summary>
-        public ZuuseAccountsAPI Client { get; private set; }
+        public ZuuseAccountsApi Client { get; private set; }
 
         /// <summary>
         /// The old API for access to external accounts.

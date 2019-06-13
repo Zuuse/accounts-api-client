@@ -21,7 +21,7 @@ namespace Zuuse.Accounts.Client
     /// <summary>
     /// Zuuse operations.
     /// </summary>
-    public partial class Zuuse : IServiceOperations<ZuuseAccountsAPI>, IZuuse
+    public partial class Zuuse : IServiceOperations<ZuuseAccountsApi>, IZuuse
     {
         /// <summary>
         /// Initializes a new instance of the Zuuse class.
@@ -32,7 +32,7 @@ namespace Zuuse.Accounts.Client
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public Zuuse(ZuuseAccountsAPI client)
+        public Zuuse(ZuuseAccountsApi client)
         {
             if (client == null)
             {
@@ -42,9 +42,9 @@ namespace Zuuse.Accounts.Client
         }
 
         /// <summary>
-        /// Gets a reference to the ZuuseAccountsAPI
+        /// Gets a reference to the ZuuseAccountsApi
         /// </summary>
-        public ZuuseAccountsAPI Client { get; private set; }
+        public ZuuseAccountsApi Client { get; private set; }
 
         /// <param name='customHeaders'>
         /// Headers that will be added to request.

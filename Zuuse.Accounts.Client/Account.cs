@@ -21,7 +21,7 @@ namespace Zuuse.Accounts.Client
     /// <summary>
     /// Account operations.
     /// </summary>
-    public partial class Account : IServiceOperations<ZuuseAccountsAPI>, IAccount
+    public partial class Account : IServiceOperations<ZuuseAccountsApi>, IAccount
     {
         /// <summary>
         /// Initializes a new instance of the Account class.
@@ -32,7 +32,7 @@ namespace Zuuse.Accounts.Client
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public Account(ZuuseAccountsAPI client)
+        public Account(ZuuseAccountsApi client)
         {
             if (client == null)
             {
@@ -42,9 +42,9 @@ namespace Zuuse.Accounts.Client
         }
 
         /// <summary>
-        /// Gets a reference to the ZuuseAccountsAPI
+        /// Gets a reference to the ZuuseAccountsApi
         /// </summary>
-        public ZuuseAccountsAPI Client { get; private set; }
+        public ZuuseAccountsApi Client { get; private set; }
 
         /// <summary>
         /// Use `PUT /{client}/accounts/{id}` endpoint instead

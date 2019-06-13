@@ -21,7 +21,7 @@ namespace Zuuse.Accounts.Client
     /// <summary>
     /// ClientProject operations.
     /// </summary>
-    public partial class ClientProject : IServiceOperations<ZuuseAccountsAPI>, IClientProject
+    public partial class ClientProject : IServiceOperations<ZuuseAccountsApi>, IClientProject
     {
         /// <summary>
         /// Initializes a new instance of the ClientProject class.
@@ -32,7 +32,7 @@ namespace Zuuse.Accounts.Client
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public ClientProject(ZuuseAccountsAPI client)
+        public ClientProject(ZuuseAccountsApi client)
         {
             if (client == null)
             {
@@ -42,9 +42,9 @@ namespace Zuuse.Accounts.Client
         }
 
         /// <summary>
-        /// Gets a reference to the ZuuseAccountsAPI
+        /// Gets a reference to the ZuuseAccountsApi
         /// </summary>
-        public ZuuseAccountsAPI Client { get; private set; }
+        public ZuuseAccountsApi Client { get; private set; }
 
         /// <summary>
         /// Use `GET /clients/{client}` endpoint instead

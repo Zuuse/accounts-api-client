@@ -21,7 +21,7 @@ namespace Zuuse.Accounts.Client
     /// <summary>
     /// EmailTemplates operations.
     /// </summary>
-    public partial class EmailTemplates : IServiceOperations<ZuuseAccountsAPI>, IEmailTemplates
+    public partial class EmailTemplates : IServiceOperations<ZuuseAccountsApi>, IEmailTemplates
     {
         /// <summary>
         /// Initializes a new instance of the EmailTemplates class.
@@ -32,7 +32,7 @@ namespace Zuuse.Accounts.Client
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public EmailTemplates(ZuuseAccountsAPI client)
+        public EmailTemplates(ZuuseAccountsApi client)
         {
             if (client == null)
             {
@@ -42,9 +42,9 @@ namespace Zuuse.Accounts.Client
         }
 
         /// <summary>
-        /// Gets a reference to the ZuuseAccountsAPI
+        /// Gets a reference to the ZuuseAccountsApi
         /// </summary>
-        public ZuuseAccountsAPI Client { get; private set; }
+        public ZuuseAccountsApi Client { get; private set; }
 
         /// <summary>
         /// The old API for access to email templates
