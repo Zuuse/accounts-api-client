@@ -22,10 +22,12 @@ namespace Zuuse.Accounts.Client.Models
         /// <summary>
         /// Initializes a new instance of the LoginRequest class.
         /// </summary>
-        public LoginRequest(string identifyingKey = default(string), string password = default(string))
+        public LoginRequest(string identifyingKey = default(string), string password = default(string), string sSOToken = default(string), string redirectUri = default(string))
         {
             IdentifyingKey = identifyingKey;
             Password = password;
+            SSOToken = sSOToken;
+            RedirectUri = redirectUri;
             CustomInit();
         }
 
@@ -43,6 +45,16 @@ namespace Zuuse.Accounts.Client.Models
         /// </summary>
         [JsonProperty(PropertyName = "Password")]
         public string Password { get; set; }
+
+        /// <summary>
+        /// </summary>
+        [JsonProperty(PropertyName = "SSOToken")]
+        public string SSOToken { get; set; }
+
+        /// <summary>
+        /// </summary>
+        [JsonProperty(PropertyName = "RedirectUri")]
+        public string RedirectUri { get; set; }
 
     }
 }

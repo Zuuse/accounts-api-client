@@ -50,7 +50,7 @@ namespace Zuuse.Accounts.Client
             }
 
             /// <summary>
-            /// Use to refresh the expiration on a security token, this should be called
+            /// Refreshes the expiration on a security token, this should be called
             /// periodically (recommend, once per session).
             /// </summary>
             /// <param name='operations'>
@@ -65,7 +65,7 @@ namespace Zuuse.Accounts.Client
             }
 
             /// <summary>
-            /// Use to refresh the expiration on a security token, this should be called
+            /// Refreshes the expiration on a security token, this should be called
             /// periodically (recommend, once per session).
             /// </summary>
             /// <param name='operations'>
@@ -514,6 +514,60 @@ namespace Zuuse.Accounts.Client
             public static async Task PostUpdateRolesAsync(this IAccounts operations, string client, CancellationToken cancellationToken = default(CancellationToken))
             {
                 (await operations.PostUpdateRolesWithHttpMessagesAsync(client, null, cancellationToken).ConfigureAwait(false)).Dispose();
+            }
+
+            /// <summary>
+            /// Search for Users based on the users Name, Username, Identifier, Email,
+            /// Phone and RoleName.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='client'>
+            /// Client short name
+            /// </param>
+            /// <param name='terms'>
+            /// The terms to search the users with.
+            /// </param>
+            /// <param name='skip'>
+            /// The number of users to skip at the begining of the list.
+            /// </param>
+            /// <param name='take'>
+            /// The number of users to return.
+            /// </param>
+            public static PagePublicAccount GetSearch(this IAccounts operations, string client, string terms = default(string), int? skip = default(int?), int? take = default(int?))
+            {
+                return operations.GetSearchAsync(client, terms, skip, take).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Search for Users based on the users Name, Username, Identifier, Email,
+            /// Phone and RoleName.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='client'>
+            /// Client short name
+            /// </param>
+            /// <param name='terms'>
+            /// The terms to search the users with.
+            /// </param>
+            /// <param name='skip'>
+            /// The number of users to skip at the begining of the list.
+            /// </param>
+            /// <param name='take'>
+            /// The number of users to return.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<PagePublicAccount> GetSearchAsync(this IAccounts operations, string client, string terms = default(string), int? skip = default(int?), int? take = default(int?), CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.GetSearchWithHttpMessagesAsync(client, terms, skip, take, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
     }

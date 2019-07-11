@@ -40,8 +40,8 @@ namespace Zuuse.Accounts.Client
         /// </exception>
         Task<HttpOperationResponse<string>> PutAccountLoginWithHttpMessagesAsync(LoginRequest loginRequest, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Use to refresh the expiration on a security token, this should be
-        /// called periodically (recommend, once per session).
+        /// Refreshes the expiration on a security token, this should be called
+        /// periodically (recommend, once per session).
         /// </summary>
         /// <param name='client'>
         /// Client short name
@@ -329,5 +329,37 @@ namespace Zuuse.Accounts.Client
         /// Thrown when a required parameter is null
         /// </exception>
         Task<HttpOperationResponse> PostUpdateRolesWithHttpMessagesAsync(string client, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Search for Users based on the users Name, Username, Identifier,
+        /// Email, Phone and RoleName.
+        /// </summary>
+        /// <param name='client'>
+        /// Client short name
+        /// </param>
+        /// <param name='terms'>
+        /// The terms to search the users with.
+        /// </param>
+        /// <param name='skip'>
+        /// The number of users to skip at the begining of the list.
+        /// </param>
+        /// <param name='take'>
+        /// The number of users to return.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        /// <exception cref="Microsoft.Rest.HttpOperationException">
+        /// Thrown when the operation returned an invalid status code
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.SerializationException">
+        /// Thrown when unable to deserialize the response
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.ValidationException">
+        /// Thrown when a required parameter is null
+        /// </exception>
+        Task<HttpOperationResponse<PagePublicAccount>> GetSearchWithHttpMessagesAsync(string client, string terms = default(string), int? skip = default(int?), int? take = default(int?), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
     }
 }
