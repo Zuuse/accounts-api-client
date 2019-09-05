@@ -309,9 +309,9 @@ namespace Zuuse.Accounts.Client
             /// <param name='account'>
             /// Details for account to update
             /// </param>
-            public static void PostUpdateAccount(this IAccounts operations, string client, string id, PublicAccount account)
+            public static void PostUpsertAccount(this IAccounts operations, string client, string id, PublicAccount account)
             {
-                operations.PostUpdateAccountAsync(client, id, account).GetAwaiter().GetResult();
+                operations.PostUpsertAccountAsync(client, id, account).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -333,9 +333,9 @@ namespace Zuuse.Accounts.Client
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task PostUpdateAccountAsync(this IAccounts operations, string client, string id, PublicAccount account, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task PostUpsertAccountAsync(this IAccounts operations, string client, string id, PublicAccount account, CancellationToken cancellationToken = default(CancellationToken))
             {
-                (await operations.PostUpdateAccountWithHttpMessagesAsync(client, id, account, null, cancellationToken).ConfigureAwait(false)).Dispose();
+                (await operations.PostUpsertAccountWithHttpMessagesAsync(client, id, account, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>

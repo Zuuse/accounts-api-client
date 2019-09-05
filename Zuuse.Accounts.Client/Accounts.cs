@@ -1162,7 +1162,7 @@ namespace Zuuse.Accounts.Client
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<HttpOperationResponse> PostUpdateAccountWithHttpMessagesAsync(string client, string id, PublicAccount account, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<HttpOperationResponse> PostUpsertAccountWithHttpMessagesAsync(string client, string id, PublicAccount account, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (client == null)
             {
@@ -1191,7 +1191,7 @@ namespace Zuuse.Accounts.Client
                 tracingParameters.Add("id", id);
                 tracingParameters.Add("account", account);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "PostUpdateAccount", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "PostUpsertAccount", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;

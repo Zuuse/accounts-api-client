@@ -218,7 +218,7 @@ namespace Zuuse.Accounts.Client
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<HttpOperationResponse> PostUpdateAccountWithHttpMessagesAsync(string client, string id, PublicAccount account, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<HttpOperationResponse> PostUpsertAccountWithHttpMessagesAsync(string client, string id, PublicAccount account, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Performs a soft-delete of the indicated account.
         /// </summary>
